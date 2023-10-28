@@ -1,0 +1,46 @@
+palavra_correta = str(input('insira a palavra que o jogador deve acertar: '))
+
+vidas = 6
+letras_certas = []
+letras_erradas = ''
+
+# Loop principal do jogo
+while True:
+palavra_secreta = ""
+for letra in palavra_correta:
+if letra in letras_certas:
+palavra_secreta += letra
+else:
+palavra_secreta += "_"
+
+print("Palavra secreta: " + palavra_secreta)
+print("Vidas restantes: " + str(vidas))
+print("Palavras errads: " + letras_erradas)
+
+# Solicitar uma letra ao jogador
+chute = input("Digite uma letra: ").lower()
+while len(chute) != 1:
+print('digite apenas 1 letra')
+chute = input("Digite uma letra: ").lower()
+
+
+# Verificar se a letra já foi tentada
+if chute in letras_certas:
+print("Você já tentou essa letra. Tente outra.")
+continue
+
+# Verificar se a letra está na palavra
+if chute in palavra_correta:
+letras_certas.append(chute)
+# Verificar se o jogador venceu
+if set(letras_certas) == set(palavra_correta):
+print("Parabéns! Você ganhou! A palavra é: " + palavra_correta)
+break
+else:
+vidas -= 1
+letras_erradas += chute
+
+
+if vidas == 0:
+print(f'Você perdeu, a palavra era: {palavra_correta}')
+break
