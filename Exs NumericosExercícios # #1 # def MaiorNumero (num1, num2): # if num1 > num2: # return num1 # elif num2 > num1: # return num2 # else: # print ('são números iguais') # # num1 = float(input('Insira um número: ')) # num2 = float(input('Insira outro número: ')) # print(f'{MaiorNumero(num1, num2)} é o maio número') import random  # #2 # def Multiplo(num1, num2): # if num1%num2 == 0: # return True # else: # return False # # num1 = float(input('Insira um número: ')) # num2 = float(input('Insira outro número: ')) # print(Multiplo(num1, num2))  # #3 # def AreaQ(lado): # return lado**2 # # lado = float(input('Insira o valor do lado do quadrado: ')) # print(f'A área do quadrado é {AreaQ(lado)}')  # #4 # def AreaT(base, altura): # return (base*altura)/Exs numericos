@@ -1,0 +1,114 @@
+Exercícios
+# #1
+# def MaiorNumero (num1, num2):
+# if num1 > num2:
+# return num1
+# elif num2 > num1:
+# return num2
+# else:
+# print ('são números iguais')
+#
+# num1 = float(input('Insira um número: '))
+# num2 = float(input('Insira outro número: '))
+# print(f'{MaiorNumero(num1, num2)} é o maio número')
+import random
+
+# #2
+# def Multiplo(num1, num2):
+# if num1%num2 == 0:
+# return True
+# else:
+# return False
+#
+# num1 = float(input('Insira um número: '))
+# num2 = float(input('Insira outro número: '))
+# print(Multiplo(num1, num2))
+
+# #3
+# def AreaQ(lado):
+# return lado**2
+#
+# lado = float(input('Insira o valor do lado do quadrado: '))
+# print(f'A área do quadrado é {AreaQ(lado)}')
+
+# #4
+# def AreaT(base, altura):
+# return (base*altura)/2
+#
+# base = float(input('Insira o valor da base do triângulo: '))
+# altura = float(input('Insira o valor da altura do triângulo: '))
+# print(f'A área do triângulo é {AreaT(base, altura)}')
+
+# #5
+# def linha(tamanho):
+# return('-'*tamanho)
+# tamanho = int(input('Insira o tamanho da linha: '))
+# print(linha(tamanho))
+
+# #6
+# lista = ['a','b', 'c', 'd']
+# listaa = []
+#
+# def numerar(lista):
+# for i, valor in enumerate(lista):
+# listaa.append((f'{i+1}) {valor}'))
+# return listaa
+# print(numerar(lista))
+
+# #7
+# lista2 = []
+# numero = float(input('Insira um número: '))
+#
+# while numero != 0:
+# lista2.append(numero)
+# numero = float(input('Insira outro número: '))
+#
+# def media(lista2):
+# return sum(lista2)
+# print(f'A média dos valores dentro da lista é: {media(lista2)}')
+
+# #8
+# def tamanhoStr(tamanho, max, min):
+# return min<tamanho<max
+#
+# tamanho=len(str(input('Insira uma palavra: ')))
+# max=int(input('Insira o número max de caracteres q a palavra pode ter: '))
+# min=int(input('Insira o número min de caracteres q a palavra pode ter: '))
+#
+# print(tamanhoStr(tamanho,max,min))
+
+# #9
+# listaa2=['a', 'b', 'c', 'd']
+# def ConfereStr(palavra, lista):
+# if palavra in lista:
+# return True
+# else:
+# return False
+#
+# palavra=str(input('insira uma palavra que deseja verificar: '))
+# print(ConfereStr(palavra, listaa2))
+
+#10
+import random
+
+n=random.randint(1,10)
+chute = int(input('Insira seu chute: '))
+vidas = 3
+
+while True:
+if chute == n:
+print(f'Você acertou, o número era {n}')
+break
+else:
+if vidas == 0:
+print(f'Você perdeu, o número era {n}')
+break
+else:
+print('Você errou, tente novamente.')
+vidas-=1
+print(f'viads: {vidas}')
+if n > chute:
+print('O número é maior')
+else:
+print('O número é menor')
+chute = int(input('Insira outro chute: '))
